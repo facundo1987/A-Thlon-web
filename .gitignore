@@ -1,0 +1,7 @@
+# Descarga original: respaldo local, fuera del sitio y del repositorio.
+/referencias/descarga-original/
+
+# Archivos temporales del sistema.
+.DS_Store
+Thumbs.db
+*.log
