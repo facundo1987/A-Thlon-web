@@ -37,3 +37,10 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
 } else {
   document.querySelectorAll('.reveal').forEach((item) => item.classList.add('visible'));
 }
+
+// Mantiene una única etiqueta visible en cada biografía.
+document.querySelectorAll('.bio-more').forEach((details) => {
+  details.addEventListener('toggle', () => {
+    details.querySelector('summary').textContent = details.open ? 'Ver menos' : 'Ver más';
+  });
+});
