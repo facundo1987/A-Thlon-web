@@ -131,3 +131,26 @@
 .bio-more[open] .bio-opened{display:inline}
 @media(max-width:760px){.program-includes ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.program-includes ul,.price-grid{grid-template-columns:1fr}.price-card .price{font-size:2.8rem}}
+
+/* Pulido visual: ritmo, tarjetas y retratos */
+@media(min-width:981px){.section{padding-top:92px;padding-bottom:92px}.section-heading{margin-bottom:42px}}
+.service-card{border-radius:12px;padding:32px;min-height:330px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.service-card:hover,.service-card.feature{transform:none}
+.service-card:hover{border-color:var(--cyan-bright)}
+.service-card.feature{background:#124563;border-color:#18738b}
+.service-card.feature:hover{background:#125570}
+.price-grid{gap:22px;align-items:stretch}
+.price-card{padding:32px;border-radius:12px;box-shadow:0 12px 36px rgba(7,25,47,.07)}
+.price-card.highlighted{background:#f5fbfc;border-color:#0c94a7;box-shadow:0 16px 40px rgba(7,25,47,.1)}
+.price-card .price-label{line-height:1.35}
+.price-card .price{margin:18px 0 0;line-height:1.12;letter-spacing:-.02em}
+.price-card .installments{margin-top:8px;font-size:.94rem}
+.price-card ul{margin:24px 0 26px;padding-top:22px;border-top-color:#d9e5e8}
+.price-card li{margin:11px 0;line-height:1.5}
+.price-card .button{width:100%;margin-top:auto}
+.price-card .popular{top:-14px;border-radius:4px}
+.program-includes{background:#103047;border-color:#18647a}
+.person-photo{aspect-ratio:4/5;border-radius:12px;background:#eaf1f3}
+.person-photo img{object-position:center 18%;filter:contrast(1.03) saturate(.96)}
+.person h3{line-height:1.08}
+@media(max-width:640px){.service-card{min-height:0}.price-card{padding:28px 24px}.person-photo{aspect-ratio:4/4.5}}
