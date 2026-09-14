@@ -154,3 +154,12 @@
 .person-photo img{object-position:center 18%;filter:contrast(1.03) saturate(.96)}
 .person h3{line-height:1.08}
 @media(max-width:640px){.service-card{min-height:0}.price-card{padding:28px 24px}.person-photo{aspect-ratio:4/4.5}}
+
+
+/* Selector de idioma */
+.language-switch{display:inline-flex;align-items:center;gap:6px;flex:none;padding:4px 8px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.72);color:var(--muted);font-size:.75rem;font-weight:800;line-height:1}
+.language-switch button{min-width:30px;min-height:30px;padding:0;border:0;border-radius:999px;background:transparent;color:inherit;font:inherit;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+.language-switch button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.language-switch button:hover:not([aria-pressed="true"]){color:var(--navy)}
+.language-switch button:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+@media(max-width:980px){.language-switch{align-self:flex-start;margin:2px 0 4px;background:var(--surface)}}
