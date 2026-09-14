@@ -154,7 +154,7 @@ while (walker.nextNode()) {
 }
 
 let currentLanguage = localStorage.getItem('athlon-language') === 'en' ? 'en' : 'es';
-const whatsappNumber = '59892724782';
+const whatsappNumber = '59894959168';
 
 function updateWhatsAppLinks() {
   document.querySelectorAll('.js-whatsapp').forEach((link) => {
