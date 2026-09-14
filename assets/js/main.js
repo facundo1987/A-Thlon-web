@@ -13,10 +13,10 @@ menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () 
   document.body.classList.remove('menu-open');
 }));
 
-const whatsappNumber = '598092724782'; // Reemplazar por el número real, sin + ni espacios.
+const whatsappNumber = '59892724782'; // Reemplazar por el número real, sin + ni espacios.
 document.querySelectorAll('.js-whatsapp').forEach((link) => {
   const service = link.dataset.service || 'una consulta';
-  const message = `Hola, vi la web de A-THLON y quisiera información sobre ${service}.`;
+  const message = link.dataset.message || `Hola, vi la web de A-THLON y quisiera información sobre ${service}.`;
   link.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
   link.target = '_blank';
   link.rel = 'noopener';
