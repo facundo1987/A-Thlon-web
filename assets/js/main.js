@@ -75,6 +75,15 @@ const translations = {
   'Actualización mensual': 'Monthly updates',
   'Revisión técnica por videos': 'Video-based technique review',
   'Más elegido': 'Most popular',
+  'Aprox. $6.200 UYU': 'Approx. UYU 6,200',
+  'Aprox. $7.600 UYU': 'Approx. UYU 7,600',
+  'Aprox. $13.500 UYU': 'Approx. UYU 13,500',
+  'Aprox. $1.800 UYU': 'Approx. UYU 1,800',
+  'Promo lanzamiento': 'Launch offer',
+  'Días': 'Days',
+  'Horas': 'Hours',
+  'Seg': 'Sec',
+  'La promoción se renueva cada 24 horas': 'The promotion renews every 24 hours',
   'A-THLON 360 · 3 meses': 'A-THLON 360 · 3 months',
   'O 3 cuotas de $4.600': 'Or 3 installments of UYU 4,600',
   'Nutrición + entrenamiento': 'Nutrition + training',
@@ -219,6 +228,49 @@ document.querySelectorAll('.bio-more').forEach((details) => {
       : (details.open ? 'Ver menos' : 'Ver más');
   });
 });
+
+const countdownElement = document.querySelector('.countdown');
+
+if (countdownElement) {
+  const countdownKey = 'athlon-launch-offer-deadline';
+  const cycleDuration = 24 * 60 * 60 * 1000;
+  let deadline = Number(localStorage.getItem(countdownKey));
+
+  if (!deadline || deadline <= Date.now()) {
+    deadline = Date.now() + cycleDuration;
+    localStorage.setItem(countdownKey, String(deadline));
+  }
+
+  const padCountdown = (value) => String(value).padStart(2, '0');
+  const updateCountdown = () => {
+    const now = Date.now();
+
+    while (deadline <= now) {
+      deadline += cycleDuration;
+    }
+
+    localStorage.setItem(countdownKey, String(deadline));
+    const remaining = deadline - now;
+    const days = Math.floor(remaining / 86400000);
+    const hours = Math.floor((remaining % 86400000) / 3600000);
+    const minutes = Math.floor((remaining % 3600000) / 60000);
+    const seconds = Math.floor((remaining % 60000) / 1000);
+
+    countdownElement.querySelector('[data-countdown-days]').textContent = padCountdown(days);
+    countdownElement.querySelector('[data-countdown-hours]').textContent = padCountdown(hours);
+    countdownElement.querySelector('[data-countdown-minutes]').textContent = padCountdown(minutes);
+    countdownElement.querySelector('[data-countdown-seconds]').textContent = padCountdown(seconds);
+    countdownElement.setAttribute(
+      'aria-label',
+      currentLanguage === 'en'
+        ? 'Time until the next promotion renewal'
+        : 'Tiempo hasta la próxima renovación de la promoción'
+    );
+  };
+
+  updateCountdown();
+  window.setInterval(updateCountdown, 1000);
+}
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
