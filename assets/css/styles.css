@@ -163,3 +163,21 @@
 .language-switch button:hover:not([aria-pressed="true"]){color:var(--navy)}
 .language-switch button:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
 @media(max-width:980px){.language-switch{align-self:flex-start;margin:2px 0 4px;background:var(--surface)}}
+
+
+/* Precios en USD y promoción de lanzamiento */
+.local-price{margin:6px 0 0;color:var(--muted);font-size:.82rem;font-weight:650}
+.offer-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;margin-top:14px}
+.offer-price .price{margin:0}
+.offer-price del{color:#758694;font:700 1.2rem/1 "Barlow Condensed";text-decoration-thickness:2px}
+.offer-price>span{color:var(--cyan);font-weight:800}
+.launch-offer{margin:18px 0 2px;padding:14px;border:1px solid rgba(12,148,167,.28);border-radius:10px;background:rgba(12,148,167,.07)}
+.offer-title,.offer-renewal{margin:0;text-align:center}
+.offer-title{color:var(--navy);font-size:.75rem;font-weight:850;text-transform:uppercase;letter-spacing:.08em}
+.offer-renewal{margin-top:9px;color:var(--muted);font-size:.68rem}
+.countdown{display:flex;align-items:flex-start;justify-content:center;gap:7px;margin-top:10px;color:var(--navy)}
+.countdown>span{display:grid;min-width:36px;text-align:center}
+.countdown strong{font:800 1.45rem/1 "Barlow Condensed"}
+.countdown small{margin-top:4px;color:var(--muted);font-size:.55rem;font-weight:750;text-transform:uppercase}
+.countdown>b{font-size:1.1rem;line-height:1}
+@media(max-width:640px){.countdown{gap:5px}.countdown>span{min-width:34px}}
