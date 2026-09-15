@@ -83,7 +83,6 @@ const translations = {
   'Días': 'Days',
   'Horas': 'Hours',
   'Seg': 'Sec',
-  'La promoción se renueva cada 24 horas': 'The promotion renews every 24 hours',
   'A-THLON 360 · 3 meses': 'A-THLON 360 · 3 months',
   'O 3 cuotas de $4.600': 'Or 3 installments of UYU 4,600',
   'Nutrición + entrenamiento': 'Nutrition + training',
@@ -263,8 +262,8 @@ if (countdownElement) {
     countdownElement.setAttribute(
       'aria-label',
       currentLanguage === 'en'
-        ? 'Time until the next promotion renewal'
-        : 'Tiempo hasta la próxima renovación de la promoción'
+        ? 'Time remaining in the promotion'
+        : 'Tiempo restante de la promoción'
     );
   };
 
